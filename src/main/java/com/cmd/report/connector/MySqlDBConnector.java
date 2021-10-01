@@ -6,26 +6,23 @@ import java.sql.SQLException;
 
 public class MySqlDBConnector implements DBConnector {
 
-    static Connection con;
     static String driver = "com.mysql.cj.jdbc.Driver";
     static String url = "jdbc:mysql://localhost/reportgen";
     static String uname = "root";
     static String pass = "";
 
     public Connection getConnection() throws DBConnectorException {
-        if(con == null){
             try {
                 Class.forName(driver);
             } catch (ClassNotFoundException e) {
                 throw new DBConnectorException(e, "Couldn't find mysql Driver");
             }
             try {
-                con = DriverManager.getConnection(url,uname, pass);
+                Connection con = DriverManager.getConnection(url,uname, pass);
+                return con;
             } catch (SQLException throwables) {
                 throw new DBConnectorException(throwables, "Couldn't Connect to database");
             }
-        }
-        return con;
     }
 
 }
