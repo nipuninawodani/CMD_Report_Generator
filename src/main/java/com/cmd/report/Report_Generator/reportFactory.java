@@ -4,13 +4,15 @@ package com.cmd.report.Report_Generator;
 public class reportFactory {
     public Report reportGenaration (String ReportType){
 
-        Report report = NULL;
+        Report report = null;
         switch (ReportType) {
             case "user_login":
-                report = new UserLoginReport;
+                report = new UserLoginReport();
                 break;
             case "order":
-                report = new OrderReport;
+                report = new OrderReport();
                 break;
+        }
+        return report;
     }
 }

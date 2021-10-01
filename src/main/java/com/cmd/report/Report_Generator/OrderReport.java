@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class OrderReport implements Report {
-    public String[][] Orderdetails(ResultSet results, int data) throws SQLException {
+    public String[][] ReportExecute(ResultSet results, int data) throws SQLException {
         int count=1;
         String [][] orderDatabyday =new String[count][5];
         while(results.next()){
