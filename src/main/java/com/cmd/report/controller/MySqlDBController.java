@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class MySqlDBController implements DBController{
 
     @Override
-    public ResultSet get(Connection con, String query) throws DBControllerException {
+    public ResultSet getResults(Connection con, String query) throws DBControllerException {
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet results = ps.executeQuery();

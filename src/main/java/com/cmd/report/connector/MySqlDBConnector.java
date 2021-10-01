@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class MySqlDBConnector implements DBConnector {
 
     static Connection con;
-    static String driver = "com.mysql.jdbc.Driver";
+    static String driver = "com.mysql.cj.jdbc.Driver";
     static String url = "jdbc:mysql://localhost/reportgen";
     static String uname = "root";
     static String pass = "";
