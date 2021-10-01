@@ -12,7 +12,7 @@ public class SqlDBConnector implements DBConnector {
     static String uname = "root";
     static String pass = "";
 
-    public static Connection getConnection() throws DBConnectorException {
+    public Connection getConnection() throws DBConnectorException {
         if(con == null){
             try {
                 Class.forName(driver);
