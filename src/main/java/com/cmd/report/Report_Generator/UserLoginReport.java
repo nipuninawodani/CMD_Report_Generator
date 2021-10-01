@@ -3,7 +3,7 @@ package com.cmd.report.Report_Generator;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserLoginReport {
+public class UserLoginReport implements Report{
     public String[][] userlogins(ResultSet results, int data) throws SQLException {
         int count=1;
         String [][] NumberofLoginsByday =new String[count][2];

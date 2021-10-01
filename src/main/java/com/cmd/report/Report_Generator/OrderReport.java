@@ -3,7 +3,7 @@ package com.cmd.report.Report_Generator;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrderReport {
+public class OrderReport implements Report {
     public String[][] Orderdetails(ResultSet results, int data) throws SQLException {
         int count=1;
         String [][] orderDatabyday =new String[count][5];
