@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class SqlDBConnector implements DBConnector {
+public class MySqlDBConnector implements DBConnector {
 
     static Connection con;
     static String driver = "com.mysql.jdbc.Driver";
-    static String url = "jdbc:mysql://localhost/studentinfo";
+    static String url = "jdbc:mysql://localhost/reportgen";
     static String uname = "root";
     static String pass = "";
 
