@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class MySqlDBConnector implements DBConnector {
 
     static String driver = "com.mysql.cj.jdbc.Driver";
-    static String url = "jdbc:mysql://localhost/reportgen";
-    static String uname = "root";
-    static String pass = "";
+    static String url = "jdbc:mysql://cmdreportgen.mysql.database.azure.com/reportgen";
+    static String uname = "Mahela@cmdreportgen";
+    static String pass = "M4h3l4di5";
 
     public Connection getConnection() throws DBConnectorException {
             try {
