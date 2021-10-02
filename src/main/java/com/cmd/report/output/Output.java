@@ -5,5 +5,5 @@ import com.cmd.report.mailsendor.XMailSender;
 import javax.mail.Session;
 
 public interface Output {
-    String outputExecute(String Savetype, String Email, Session session, XMailSender xMailSender);
+    String outputExecute(String[] arguments, Session session, XMailSender xMailSender);
 }

@@ -36,13 +36,6 @@ public class CommandLineInputs implements Inputs {
                 validator = new EmailValidator(arguments);
                 validator.validateArgument();
             }
-            else {
-                String[] arguments1 = copyOf(arguments, arguments.length);
-                String[] arguments = copyOf(arguments1, arguments1.length + 1);
-                arguments[4]="0";
-                ui.showMessage("Your report will be ready in few minutes");
-                return arguments;
-            }
             ui.showMessage("Your report will be ready in few minutes");
 
         } catch (InvalidInputException |InvalidInputCountException e ) {
