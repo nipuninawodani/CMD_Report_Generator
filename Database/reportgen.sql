@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Table structure for table `order_report`
 --
 
-DROP TABLE IF EXISTS `orders`;
-CREATE TABLE IF NOT EXISTS `orders` (
+DROP TABLE IF EXISTS `order_report`;
+CREATE TABLE IF NOT EXISTS `order_report` (
   `Date` date DEFAULT NULL,
   `Num_of_Orders` int DEFAULT NULL,
   `Cancelled_Orders` int DEFAULT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `orders`
+-- Dumping data for table `order_report`
 --
 
-INSERT INTO `orders` (`Date`, `Num_of_Orders`, `Cancelled_Orders`, `Pending_Orders`, `Confirmed_Orders`) VALUES
+INSERT INTO `order_report` (`Date`, `Num_of_Orders`, `Cancelled_Orders`, `Pending_Orders`, `Confirmed_Orders`) VALUES
 ('2020-01-01', 99, 27, 6, 66),
 ('2020-01-02', 23, 5, 3, 15),
 ('2020-01-03', 127, 99, 1, 27),
@@ -684,20 +684,20 @@ INSERT INTO `orders` (`Date`, `Num_of_Orders`, `Cancelled_Orders`, `Pending_Orde
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_logins`
+-- Table structure for table `user_login_report`
 --
 
-DROP TABLE IF EXISTS `user_logins`;
-CREATE TABLE IF NOT EXISTS `user_logins` (
+DROP TABLE IF EXISTS `user_login_report`;
+CREATE TABLE IF NOT EXISTS `user_login_report` (
   `Date` date DEFAULT NULL,
   `Login_Count` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user_logins`
+-- Dumping data for table `user_login_report`
 --
 
-INSERT INTO `user_logins` (`Date`, `Login_Count`) VALUES
+INSERT INTO `user_login_report` (`Date`, `Login_Count`) VALUES
 ('2020-01-01', 563),
 ('2020-01-02', 278),
 ('2020-01-03', 107),
