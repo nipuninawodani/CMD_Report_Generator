@@ -5,11 +5,12 @@ import java.sql.SQLException;
 
 
 public class DataCounter {
-    public int countData(ResultSet result) throws SQLException {
+    public int countData(ResultSet results) throws SQLException {
         int count=1;
-        while (result.next()) {
+        while (results.next()) {
             count++;
         }
+        results.beforeFirst();
         return count;
     }
 }

@@ -10,7 +10,9 @@ public class MySqlDBController implements DBController{
     @Override
     public ResultSet getResults(Connection con, String query) throws DBControllerException {
         try {
-            PreparedStatement ps = con.prepareStatement(query);
+            PreparedStatement ps = con.prepareStatement(query,
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
             ResultSet results = ps.executeQuery();
             return results;
 

@@ -1,2 +1,11 @@
-package com.cmd.report.output;public class OutputFile {
+package com.cmd.report.output;
+
+import com.cmd.report.mailsendor.XMailSender;
+
+import javax.mail.Session;
+
+public class OutputFile implements Output{
+    public String outputExecute(String Savetype, String Email, Session session, XMailSender xMailSender){
+        return "File Saved Successfully";
+    }
 }

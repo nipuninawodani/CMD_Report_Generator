@@ -2,9 +2,7 @@ package com.cmd.report.inputs.arguments_validators;
 
 import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DateValidatorTest {
 

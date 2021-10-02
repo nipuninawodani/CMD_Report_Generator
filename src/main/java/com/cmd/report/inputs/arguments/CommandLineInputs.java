@@ -1,10 +1,9 @@
 package com.cmd.report.inputs.arguments;
 
 import com.cmd.report.inputs.arguments.ui.UI;
-import com.kelaniya.uni.inputs.arguments_validators.*;
-import com.kelaniya.uni.inputs.arguments_validators.InvalidInputException;
+import com.cmd.report.inputs.arguments_validators.*;
 
-import java.util.Arrays;
+import static java.util.Arrays.copyOf;
 
 public class CommandLineInputs implements Inputs {
 
@@ -14,7 +13,7 @@ public class CommandLineInputs implements Inputs {
 
     public CommandLineInputs(String[] args, UI ui){
 
-        this.arguments= Arrays.copyOf(args,args.length);
+        this.arguments= copyOf(args,args.length);
         this.ui=ui;
     }
 
@@ -33,10 +32,17 @@ public class CommandLineInputs implements Inputs {
 
             validator= new OutputTypeValidator(arguments);
             validator.validateArgument();
-
-            validator= new EmailValidator(arguments);
-            validator.validateArgument();
-
+            if(arguments[3] == "Email") {
+                validator = new EmailValidator(arguments);
+                validator.validateArgument();
+            }
+            else {
+                String[] arguments1 = copyOf(arguments, arguments.length);
+                String[] arguments = copyOf(arguments1, arguments1.length + 1);
+                arguments[4]="0";
+                ui.showMessage("Your report will be ready in few minutes");
+                return arguments;
+            }
             ui.showMessage("Your report will be ready in few minutes");
 
         } catch (InvalidInputException |InvalidInputCountException e ) {
