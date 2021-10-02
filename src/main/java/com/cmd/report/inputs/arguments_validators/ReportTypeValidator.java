@@ -13,8 +13,8 @@ public class ReportTypeValidator implements ArgumentsValidator {
     public void validateArgument() throws InvalidInputException {
 
         //Make sure the first argument is monthly_sales_report
-        if(!(arguments[0].equals("monthly_sales_report"))){
-            throw new InvalidInputException("Type of the report should be stated as monthly_sales_report");
+        if(!(arguments[0].equals("order_report") || arguments[0].equals("user_login_report"))){
+            throw new InvalidInputException("Type of the report should be stated as order_report or user_login_report");
         }
 
     }
