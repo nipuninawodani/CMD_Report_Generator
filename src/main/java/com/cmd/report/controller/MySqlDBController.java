@@ -1,7 +1,5 @@
 package com.cmd.report.controller;
 
-import com.cmd.report.connector.DBConnectorException;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

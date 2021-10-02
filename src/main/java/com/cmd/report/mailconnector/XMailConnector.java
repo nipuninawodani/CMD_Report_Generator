@@ -1,4 +1,4 @@
-package mailconnector;
+package com.cmd.report.mailconnector;
 
 import javax.mail.*;
 import java.util.Properties;

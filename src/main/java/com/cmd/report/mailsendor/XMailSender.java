@@ -1,4 +1,4 @@
-package mailsendor;
+package com.cmd.report.mailsendor;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
