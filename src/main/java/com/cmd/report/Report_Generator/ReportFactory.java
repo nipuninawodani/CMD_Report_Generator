@@ -6,10 +6,10 @@ public class ReportFactory {
 
         Report report = null;
         switch (ReportType) {
-            case "user_login":
+            case "user_login_report":
                 report = new UserLoginReport();
                 break;
-            case "order":
+            case "order_report":
                 report = new OrderReport();
                 break;
         }
