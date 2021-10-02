@@ -2,7 +2,7 @@ package com.cmd.report.Report_Generator;
 
 
 public class reportFactory {
-    public Report reportGenaration (String ReportType){
+    public Report reportGeneration(String ReportType){
 
         Report report = null;
         switch (ReportType) {

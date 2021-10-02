@@ -4,5 +4,5 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public interface Report {
-    String[][] ReportExecute(ResultSet results, int data) throws SQLException;
+    String[][] ReportExecute(ResultSet results, int Countdata) throws SQLException;
 }
