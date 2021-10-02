@@ -5,8 +5,11 @@ import java.sql.SQLException;
 
 public class OrderReport implements Report {
     public String[][] ReportExecute(ResultSet results, int Countdata) throws SQLException {
-        int count=1;
-        String [][] orderDatabyday =new String[Countdata][5];
+
+        int count=2;
+        String [][] orderDatabyday =new String[Countdata+2][5];
+        orderDatabyday[0] = new String[]{" ", " ","user login report"," " ," "};
+        orderDatabyday[1] = new String[]{" ", "Date"," Number Of Order "," Cancelled Orders "," Pending Orders "," Confirmed Orders "};
         while(results.next()){
             orderDatabyday[count][1]= results.getString("date") ;
             orderDatabyday[count][2]= results.getString("Num_of_orders") ;
