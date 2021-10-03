@@ -6,8 +6,8 @@ import javax.mail.Session;
 
 public class OutputEmail implements Output{
 
-    public String outputExecute(String Savetype, String Email, Session session, XMailSender xMailSender){
-        xMailSender.sendmessage(session,Email);
+    public String outputExecute(String[] arguments, Session session, XMailSender xMailSender){
+        xMailSender.sendmessage(session,arguments[4]);
         return "Mail Sent Successfully";
     }
 }

@@ -62,7 +62,7 @@ public class ReportApp {
             writeDataToExcel.ExcelCreation(TableData);
             Session session =xMailConnector.getSession();
             Output output = outputFactory.outputGenaration(arguments[3]);
-            String message = output.outputExecute(arguments[3],arguments[4],session,xMailSender);
+            String message = output.outputExecute(arguments,session,xMailSender);
             ui.showMessage(message);
 
         } catch (InvalidInputCountException | DBConnectorException | DBControllerException | SQLException | IOException | ResultsetSQLExeption e) {
