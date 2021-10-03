@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MySqlDBControllerTest {
     DBConnector dbConnector = new MySqlDBConnector();
@@ -25,17 +26,27 @@ public class MySqlDBControllerTest {
         }
     }
 
-    private String query = "SELECT * FROM Order_Report;";
-
 
     //should return resultsset object when valid inputs are given
     @Test
     public void returns_resultset_when_arguments_are_correct() throws DBControllerException {
 
+        String query = "SELECT * FROM Order_Report;";
+
         DBController dbController = new MySqlDBController();
        ResultSet resultSet = dbController.getResults(connection,query);
         assertThat(resultSet, instanceOf(java.sql.ResultSet.class));
+    }
 
+    //Should throw an error when invalid argumants are given
+    @Test
+    public void throw_an_error_when_invalid_argumants_are_given() throws DBControllerException {
 
+        String query = "Abcd";
+
+        DBController dbController = new MySqlDBController();
+        assertThrows(DBControllerException.class, () ->{
+            dbController.getResults(connection,query);
+        });
     }
 }
