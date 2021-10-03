@@ -9,8 +9,8 @@ import com.cmd.report.controller.DBControllerException;
 import com.cmd.report.inputs.arguments.InvalidArgumentsCountException;
 import com.cmd.report.inputs.arguments.commandlineinputs.Inputs;
 import com.cmd.report.inputs.arguments.ui.UI;
-import com.cmd.report.mailconnector.XMailConnector;
-import com.cmd.report.mailsendor.XMailSender;
+import com.cmd.report.mailconnector.MailConnector;
+import com.cmd.report.mailsendor.MailSender;
 import com.cmd.report.output.Output;
 import com.cmd.report.output.OutputFactory;
 
@@ -25,8 +25,8 @@ public class ReportApp {
     private final Inputs inputs;
     private final DBConnector dbConnector;
     private final DBController dbController;
-    private final XMailConnector xMailConnector;
-    private final XMailSender xMailSender;
+    private final MailConnector mailConnector;
+    private final MailSender mailSender;
     private final ReportQuery reportQuery;
     private final ReportFactory reportFactory;
     private final DataCounter dataCounter;
@@ -34,14 +34,14 @@ public class ReportApp {
     private final OutputFactory outputFactory;
 
 
-    public ReportApp(UI ui, Inputs inputs, DBConnector dbConnector, DBController dbController, XMailConnector xMailConnector, XMailSender xMailSender, ReportQuery reportQuery, ReportFactory reportFactory, DataCounter dataCounter, WriteDataToExcel writeDataToExcel, OutputFactory outputFactory){
+    public ReportApp(UI ui, Inputs inputs, DBConnector dbConnector, DBController dbController, MailConnector mailConnector, MailSender mailSender, ReportQuery reportQuery, ReportFactory reportFactory, DataCounter dataCounter, WriteDataToExcel writeDataToExcel, OutputFactory outputFactory){
 
         this.ui = ui;
         this.inputs = inputs;
         this.dbConnector = dbConnector;
         this.dbController = dbController;
-        this.xMailConnector =xMailConnector;
-        this.xMailSender = xMailSender;
+        this.mailConnector =mailConnector;
+        this.mailSender = mailSender;
         this.reportQuery = reportQuery;
         this.reportFactory = reportFactory;
         this.dataCounter = dataCounter;
@@ -60,9 +60,9 @@ public class ReportApp {
             int countData = dataCounter.countData(results);
             Object[][] TableData = report.ReportExecute(results,countData);
             writeDataToExcel.ExcelCreation(TableData);
-            Session session =xMailConnector.getSession();
+            Session session =mailConnector.getSession();
             Output output = outputFactory.outputGenaration(arguments[3]);
-            String message = output.outputExecute(arguments,session,xMailSender);
+            String message = output.outputExecute(arguments,session,mailSender);
             ui.showMessage(message);
 
         } catch ( InvalidArgumentsCountException | DBConnectorException | DBControllerException | SQLException | IOException | ResultsetSQLExeption e) {

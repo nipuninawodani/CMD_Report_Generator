@@ -9,14 +9,15 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-public class XMailSender {
-    public String sendmessage(Session session, String recepient) {
+public class XMailSender implements MailSender {
+    public String sendmessage(Session session, String recepient) throws XMailSenderException {
+
         String myAccountEmail = "sachintharakaedu@gmail.com";
         Message message = new MimeMessage(session);
         try {
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("My first email from Java");
+            message.setSubject("Order confirmation");
             message.setText("Hey there You were Added to the branch");
 
             //3) create MimeBodyPart object and set your message text
@@ -37,19 +38,17 @@ public class XMailSender {
             multipart.addBodyPart(messageBodyPart1);
             multipart.addBodyPart(messageBodyPart2);
 
-            //6) set the multiplart object to the message object
+            //6) set the multipart object to the message object
             message.setContent(multipart );
 
             //7) send message
             Transport.send(message);
 
 
-            Transport.send(message);
             return "Message Sent Successfully";
         } catch (MessagingException e) {
-            e.printStackTrace();
+           throw new XMailSenderException(e,"Emil not send");
         }
-        return null;
     }
 
 }

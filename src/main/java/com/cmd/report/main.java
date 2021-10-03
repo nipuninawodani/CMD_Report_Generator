@@ -12,7 +12,9 @@ import com.cmd.report.inputs.arguments.commandlineinputs.CommandLineInputs;
 import com.cmd.report.inputs.arguments.commandlineinputs.Inputs;
 import com.cmd.report.inputs.arguments.ui.CommandLineUI;
 import com.cmd.report.inputs.arguments.ui.UI;
+import com.cmd.report.mailconnector.MailConnector;
 import com.cmd.report.mailconnector.XMailConnector;
+import com.cmd.report.mailsendor.MailSender;
 import com.cmd.report.mailsendor.XMailSender;
 import com.cmd.report.output.OutputFactory;
 
@@ -22,8 +24,8 @@ public class main {
         Inputs inputs=new CommandLineInputs(args,ui);
         DBConnector dbConnector = new MySqlDBConnector();
         DBController dbController = new MySqlDBController();
-        XMailConnector xMailConnector = new XMailConnector();
-        XMailSender xMailSender =new XMailSender();
+        MailConnector mailConnector = new XMailConnector();
+        MailSender mailSender =new XMailSender();
         ReportQuery reportQuery = new ReportQuery();
         ReportFactory reportFactory = new ReportFactory();
         DataCounter dataCounter = new DataCounter();
@@ -32,7 +34,7 @@ public class main {
 
 
 
-        ReportApp app = new ReportApp(ui,inputs,dbConnector,dbController,xMailConnector,xMailSender,reportQuery, reportFactory,dataCounter,writeDataToExcel,outputFactory);
+        ReportApp app = new ReportApp(ui,inputs,dbConnector,dbController,mailConnector,mailSender,reportQuery, reportFactory,dataCounter,writeDataToExcel,outputFactory);
 
         app.execute();
 

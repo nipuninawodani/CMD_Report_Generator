@@ -3,7 +3,7 @@ package com.cmd.report.mailconnector;
 import javax.mail.*;
 import java.util.Properties;
 
-public class XMailConnector {
+public class XMailConnector implements MailConnector{
     public Session getSession() throws Exception {
 
     Properties properties = new Properties();
