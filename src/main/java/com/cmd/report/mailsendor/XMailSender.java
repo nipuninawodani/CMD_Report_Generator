@@ -17,12 +17,11 @@ public class XMailSender implements MailSender {
         try {
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("Order confirmation");
-            message.setText("Hey there You were Added to the branch");
+            message.setSubject("CMD Report Generator");
 
             //3) create MimeBodyPart object and set your message text
             BodyPart messageBodyPart1 = new MimeBodyPart();
-            messageBodyPart1.setText("This is message body");
+            messageBodyPart1.setText("Your Report Attached");
 
             //4) create new MimeBodyPart object and set DataHandler object to this object
             MimeBodyPart messageBodyPart2 = new MimeBodyPart();
@@ -47,7 +46,7 @@ public class XMailSender implements MailSender {
 
             return "Message Sent Successfully";
         } catch (MessagingException e) {
-           throw new XMailSenderException(e,"Emil not send");
+           throw new XMailSenderException(e,"Email not send");
         }
     }
 
