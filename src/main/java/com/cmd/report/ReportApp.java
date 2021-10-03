@@ -1,9 +1,6 @@
 package com.cmd.report;
 
-import com.cmd.report.Report_Generator.DataCounter;
-import com.cmd.report.Report_Generator.Report;
-import com.cmd.report.Report_Generator.ReportFactory;
-import com.cmd.report.Report_Generator.ReportQuery;
+import com.cmd.report.Report_Generator.*;
 import com.cmd.report.SaveInExcel.WriteDataToExcel;
 import com.cmd.report.connector.DBConnector;
 import com.cmd.report.connector.DBConnectorException;
@@ -68,7 +65,7 @@ public class ReportApp {
             String message = output.outputExecute(arguments[3],arguments[4],session,xMailSender);
             ui.showMessage(message);
 
-        } catch (InvalidInputCountException | DBConnectorException | DBControllerException | SQLException | IOException e) {
+        } catch (InvalidInputCountException | DBConnectorException | DBControllerException | SQLException | IOException | ResultsetSQLExeption e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
