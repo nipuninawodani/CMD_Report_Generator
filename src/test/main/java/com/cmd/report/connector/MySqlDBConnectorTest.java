@@ -1,4 +1,7 @@
-import static org.junit.Assert.*;
+package com.cmd.report.connector;
+
 public class MySqlDBConnectorTest {
+
+
   
 }
