@@ -6,8 +6,8 @@ import com.cmd.report.connector.DBConnector;
 import com.cmd.report.connector.DBConnectorException;
 import com.cmd.report.controller.DBController;
 import com.cmd.report.controller.DBControllerException;
-import com.cmd.report.inputs.arguments.Inputs;
-import com.cmd.report.inputs.arguments.InvalidInputCountException;
+import com.cmd.report.inputs.arguments.InvalidArgumentsCountException;
+import com.cmd.report.inputs.arguments.commandlineinputs.Inputs;
 import com.cmd.report.inputs.arguments.ui.UI;
 import com.cmd.report.mailconnector.XMailConnector;
 import com.cmd.report.mailsendor.XMailSender;
@@ -65,7 +65,7 @@ public class ReportApp {
             String message = output.outputExecute(arguments,session,xMailSender);
             ui.showMessage(message);
 
-        } catch (InvalidInputCountException | DBConnectorException | DBControllerException | SQLException | IOException | ResultsetSQLExeption e) {
+        } catch ( InvalidArgumentsCountException | DBConnectorException | DBControllerException | SQLException | IOException | ResultsetSQLExeption e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();

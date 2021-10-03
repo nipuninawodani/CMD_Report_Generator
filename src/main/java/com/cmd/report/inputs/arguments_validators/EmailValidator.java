@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class EmailValidator implements ArgumentsValidator {
 
-    private String[] arguments;
+    public String[] arguments;
     public EmailValidator(String[] args){
 
         this.arguments= Arrays.copyOf(args,args.length);
