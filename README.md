@@ -21,6 +21,7 @@ SE/2018/042 - Sachin-Tharaka
 SE/2018/048 - waruniLalendra
 
 #1.Database Creation & SQL Connection - Mahela
+
 The database for the tool is created using Mysql and hosted on a local server. The database has two tables,
 ·        Orders Table
 ·        User Login Count Table
