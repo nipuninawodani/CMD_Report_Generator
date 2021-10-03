@@ -1,11 +1,6 @@
-<<<<<<< HEAD:src/test/main/java/com/cmd/report/inputs/arguments/commandlineinputs/CommandLineInputsTest.java
 package com.cmd.report.inputs.arguments.commandlineinputs;
 
 import com.cmd.report.inputs.arguments.InvalidArgumentsCountException;
-=======
-package com.cmd.report.inputs.arguments;
-
->>>>>>> 090d73f594da06d8389eb1a5c17ae8a308827c49:src/test/main/java/com/cmd/report/inputs/arguments/CommandLineInputsTest.java
 import com.cmd.report.inputs.arguments.arguments_counter.ArgumentsCounter;
 import com.cmd.report.inputs.arguments_validators.*;
 import org.junit.Test;
