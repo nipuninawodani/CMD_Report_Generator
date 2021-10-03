@@ -2,6 +2,7 @@ package com.cmd.report.inputs.arguments.commandlineinputs;
 
 import com.cmd.report.inputs.arguments.InvalidArgumentsCountException;
 import com.cmd.report.inputs.arguments.arguments_counter.ArgumentCounter;
+import com.cmd.report.inputs.arguments.arguments_counter.ArgumentsCounter;
 import com.cmd.report.inputs.arguments.selector.*;
 import com.cmd.report.inputs.arguments.ui.UI;
 import com.cmd.report.inputs.arguments_validators.*;
@@ -26,7 +27,7 @@ public class CommandLineInputs implements Inputs {
     public String[] validateArgumentArray() {
 
         try {
-
+            ArgumentCounter argumentCounter = new ArgumentsCounter(arguments);
             argumentCounter.verifyArgumentsCount();
 
             validator= new ReportTypeValidator(arguments);
@@ -38,7 +39,8 @@ public class CommandLineInputs implements Inputs {
             validator= new OutputTypeValidator(arguments);
             validator.validateArgument();
 
-            receiveTypeSelector = new ReceiveTypeSelector((EmailValidator) validator);
+            EmailValidator validator = new EmailValidator(arguments);
+            receiveTypeSelector = new ReceiveTypeSelector(validator);
             receiveTypeSelector.decideAndValidate();
 
             ui.showMessage("Your report will be ready in few minutes");

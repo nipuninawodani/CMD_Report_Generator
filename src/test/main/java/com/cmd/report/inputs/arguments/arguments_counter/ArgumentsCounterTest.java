@@ -1,19 +1,8 @@
-<<<<<<< HEAD:src/test/main/java/com/cmd/report/inputs/arguments/arguments_counter/ArgumentsCounterTest.java
-package com.cmd.report.inputs.arguments.arguments_counter;
-
-import com.cmd.report.inputs.arguments.InvalidArgumentsCountException;
-
-import org.junit.Test;
-
-=======
 package com.cmd.report.inputs.arguments;
 
 import com.cmd.report.inputs.arguments.arguments_counter.ArgumentsCounter;
 import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
->>>>>>> 090d73f594da06d8389eb1a5c17ae8a308827c49:src/test/main/java/com/cmd/report/inputs/arguments/ArgumentsCounterTest.java
 import static org.junit.Assert.assertThrows;
 
 public class ArgumentsCounterTest {
